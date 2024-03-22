@@ -14,6 +14,11 @@ public enum SlackNotifierProp {
      */
     USER("ckss.user"),
 
+    /**
+     * The SonarQube server URL
+     */
+    SONARQUBE_URL("ckss.sonarqube_url"),
+
     SERVER_TOKEN("ckss.token"),
     INCLUDE_GATE("ckss.gate"),
     /**

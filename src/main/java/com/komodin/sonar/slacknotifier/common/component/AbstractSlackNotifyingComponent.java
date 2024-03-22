@@ -93,6 +93,11 @@ public abstract class AbstractSlackNotifyingComponent {
         return Boolean.parseBoolean(includeGate.orElse("false"));
     }
 
+    protected String getSonarQubeUrl() {
+        final Optional<String> url = this.configuration.get(SlackNotifierProp.SONARQUBE_URL.property());
+        return url.orElse("http://pleaseDefineSonarQubeUrl/");
+    }
+
     protected String getSlackTemplate(){
         final Optional<String> icon = this.configuration.get(SlackNotifierProp.NOTIFICATION_TEMPLATE.property());
         return icon.orElse("No template");

@@ -29,13 +29,11 @@ class ProjectAnalysisPayloadBuilder {
     private static final Logger LOG = Loggers.get(ProjectAnalysisPayloadBuilder.class);
 
     private static final String SLACK_GOOD_COLOUR = "good";
-    private static final String SLACK_WARNING_COLOUR = "warning";
     private static final String SLACK_DANGER_COLOUR = "danger";
     private static final Map<QualityGate.Status, String> statusToColor = new EnumMap<>(QualityGate.Status.class);
 
     static {
         statusToColor.put(QualityGate.Status.OK, SLACK_GOOD_COLOUR);
-        statusToColor.put(QualityGate.Status.WARN, SLACK_WARNING_COLOUR);
         statusToColor.put(QualityGate.Status.ERROR, SLACK_DANGER_COLOUR);
     }
 

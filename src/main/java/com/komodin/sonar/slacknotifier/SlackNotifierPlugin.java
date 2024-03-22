@@ -47,6 +47,15 @@ public class SlackNotifierPlugin implements Plugin {
             .subCategory(SUBCATEGORY)
             .index(1)
             .build());
+        extensions.add(PropertyDefinition.builder(SONARQUBE_URL.property())
+            .name("Sonarqube server url")
+            .description("Base URL of SonarQube server")
+            .defaultValue("https://sonar.infra.paper.id/")
+            .type(PropertyType.STRING)
+            .category(CATEGORY)
+            .subCategory(SUBCATEGORY)
+            .index(1)
+            .build());
         extensions.add(PropertyDefinition.builder(PROXY_IP.property())
             .name("Proxy IP")
             .description("IP address of proxy server to use")

@@ -93,7 +93,7 @@ public class SlackPostProjectAnalysisTask extends AbstractSlackNotifyingComponen
         Map lookupMap = new HashMap<String,String>();
         LOG.info("=====================================");
         try {
-            SonarClient sc = new SonarClient(getServerToken(), getSonarServerUrl());
+            SonarClient sc = new SonarClient(getServerToken(), getSonarQubeUrl());
             List<ProjectMeasure> latestMeasures = sc.getMeasures(projectConfig.getProjectKey(), defaultMetrics);
 
 
@@ -136,6 +136,7 @@ public class SlackPostProjectAnalysisTask extends AbstractSlackNotifyingComponen
             }
         } catch (final IOException e) {
             LOG.error("Failed to send slack message {}", e.getMessage(), e);
+            e.printStackTrace();
         }
     }
     private String getTargetBranch(ProjectConfig projectConfig) {
